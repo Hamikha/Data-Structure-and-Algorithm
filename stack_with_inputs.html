@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <h2>Stack Data Structure</h2>
+    <div><input type="text" id="Newel" placeholder="Enter stack Element">
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary" onclick="push()">Add Element to Stack</button>
+        <button class="btn btn-warning" onclick="pop()">Remove Element</button>
+        <button class="btn btn-danger" onclick="Display()">Display All Elements </button>
+    </div>
+
+</body>
+<script>
+    let data = [];
+    let currentSize = data.length;
+    let max = 5;
+    function push() {
+        let newVal = document.getElementById("Newel").value;
+        if (currentSize >= max) {
+            alert("Stack is full");
+        }
+        else{
+            console.log(`Element Added`);
+            data[currentSize] = newVal ;
+            currentSize++;
+        }
+
+    }
+
+
+    function pop() {
+        if (currentSize <= 0) {
+            alert("Stack is already empty ");
+        }
+        else {
+            console.log(`Element Removed `);
+            currentSize--;
+            data.length = currentSize;
+        }
+    }
+
+    function Display(){
+        for(let i=0;i<data.length;i++){
+            console.log(`Stack element no ${i} and value is ${data[i]}`);
+        }
+    }
+
+</script>
+
+</html>
