@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse String with stack in javascript</title>
+</head>
+
+<body>
+    <h1>Reverse String with stack in javaScript</h1>
+</body>
+<script>
+    let data = [];
+    let currentSize = data.length;
+    function Push(x) {
+        data[currentSize] = x;
+        currentSize++;
+    }
+    function Pop() {
+        let lastRemove = data[currentSize - 1];
+        currentSize--;
+        data.length = currentSize;
+        return lastRemove;
+    }
+    function ReverseStr(str) {
+        for (let i = 0; i < str.length; i++) {
+            Push(str[i]);
+        }
+        for (let i = 0; i < str.length; i++) {
+            str[i] = Pop();
+        }
+    }
+    let str = "Hammad";
+    str = str.split("");
+    ReverseStr(str);
+    console.log(str.join(""));
+</script>
+
+</html>
